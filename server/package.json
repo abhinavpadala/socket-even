@@ -1,0 +1,9 @@
+{
+    "name": "socket-even",
+    "version": "0.0.1",
+    "description": "check if a number is even",
+    "dependencies": {
+        "express": "^4.17.1",
+        "socket.io": "^3.1.2"
+    }
+}
