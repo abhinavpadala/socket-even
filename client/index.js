@@ -1,22 +1,25 @@
-var socket = io();
-
+import { isInteger } from "./utils/utils.js";
+const socket = io();
 var form = document.getElementById("form");
 var input = document.getElementById("input");
 var message = document.getElementById("message");
 
+// const isInteger = (value) => {
+//   if (!value || isNaN(value) || !Number.isInteger(Number(value))) {
+//     return false;
+//   }
+//   return true;
+// };
 form.addEventListener("submit", function (e) {
   e.preventDefault();
   // validate input on the client side
-  if (
-    !input.value ||
-    isNaN(input.value) ||
-    !Number.isInteger(Number(input.value))
-  ) {
-    message.innerHTML = "Please provide a valid integer.";
-    message.style.color = "";
+  console.log(isInteger());
+  if (isInteger(input.value)) {
+    socket.emit("check_even", parseInt(input.value));
     input.value = "";
   } else {
-    socket.emit("check_even", parseInt(input.value));
+    message.innerHTML = "Please provide a valid integer.";
+    message.style.color = "";
     input.value = "";
   }
 });

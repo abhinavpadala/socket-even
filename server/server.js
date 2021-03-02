@@ -3,6 +3,7 @@ const app = express();
 const http = require("http").createServer(app);
 const io = require("socket.io")(http);
 const path = require("path");
+const { isEvenNumber } = require("./utils/utils");
 
 // path to serve static files
 app.use(express.static(path.join(__dirname, "../client/")));
@@ -17,7 +18,7 @@ io.on("connection", (socket) => {
     console.log("Received value is: " + value);
     let isEven = false;
     // validate received value
-    if (value && !isNaN(value) && parseInt(value) % 2 == 0) {
+    if (isEvenNumber(value)) {
       isEven = true;
     }
     // emit an object with number and boolean value

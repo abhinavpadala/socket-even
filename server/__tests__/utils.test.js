@@ -1,0 +1,13 @@
+const { isEvenNumber } = require("../utils/utils");
+
+test("Return true if even", () => {
+  expect(isEvenNumber(4)).toBe(true);
+});
+
+test("Return false if not even", () => {
+  expect(isEvenNumber(5)).toBe(false);
+});
+
+test("Return false if empty string", () => {
+  expect(isEvenNumber("")).toBe(false);
+});
