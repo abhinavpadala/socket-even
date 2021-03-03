@@ -4,16 +4,9 @@ var form = document.getElementById("form");
 var input = document.getElementById("input");
 var message = document.getElementById("message");
 
-// const isInteger = (value) => {
-//   if (!value || isNaN(value) || !Number.isInteger(Number(value))) {
-//     return false;
-//   }
-//   return true;
-// };
 form.addEventListener("submit", function (e) {
   e.preventDefault();
   // validate input on the client side
-  console.log(isInteger());
   if (isInteger(input.value)) {
     socket.emit("check_even", parseInt(input.value));
     input.value = "";
