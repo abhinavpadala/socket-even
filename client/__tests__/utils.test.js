@@ -1,4 +1,3 @@
-const { expect } = require("@jest/globals");
 const { isInteger } = require("../utils/utils");
 
 describe("Validate Input", () => {
