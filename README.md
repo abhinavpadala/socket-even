@@ -17,8 +17,8 @@ npm install
 
 node server.js
 ```
-To run tests, navigate to client/server folder and run:
 
-````
+To run tests, navigate to client/server folder and run:
+```
 npm test
 ```
